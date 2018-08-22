@@ -62,10 +62,12 @@ public class GenerateValueFiles {
      * @param supportStr 需要适配的屏幕px尺寸
      */
     public GenerateValueFiles(int baseX, int baseY, String supportStr) {
-        if (baseX > 0)
+        if (baseX > 0) {
             this.baseW = baseX;
-        if (baseY > 0)
+        }
+        if (baseY > 0) {
             this.baseH = baseY;
+        }
         String test = this.baseW + "," + this.baseH + ";";
         System.out.println("基准尺寸：" + test);
         if (!this.supportStr.contains(test)) {
@@ -84,10 +86,12 @@ public class GenerateValueFiles {
      * @return
      */
     private void validateInput(String temp) {
-        if (temp != null && temp.trim().length() > 0)
+        if (temp != null && temp.trim().length() > 0) {
             this.supportStr += temp;
-        if (dataSet == null)
+        }
+        if (dataSet == null) {
             dataSet = new HashSet<>();
+        }
         String[] tempArr = supportStr.split(";");
         for (int i = 0; i < tempArr.length; i++) {
             if (tempArr[i] != null && tempArr[i].trim().length() > 0) {
